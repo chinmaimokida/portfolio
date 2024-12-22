@@ -1,0 +1,89 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f5f5dc, #dcedc8, #8fbc8f); /* Agricultural-themed gradient */
+    color: #333;
+    line-height: 1.6;
+    background-image: url('background-image.jpg'); 
+        background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-size: cover; /* Ensure the image covers the entire screen */
+}/* Subtle field texture */
+}
+
+/* Header */
+header {
+    background: #8fbc8f; /* Light green */
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+/* Sections */
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8); /* Subtle white background for readability */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #006400; /* Dark green */
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #8fbc8f;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+li {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    background: #8fbc8f;
+    color: white;
+}
