@@ -677,6 +677,8 @@ ul { list-style: none; }
   text-align: center;
   cursor: default;
   transition: transform 0.15s;
+  position: relative;
+  overflow: visible;
 }
 .interest-slot:hover { transform: scale(1.06); background: var(--parch-6); }
 .interest-icon { font-size: 30px; display: block; margin-bottom: 8px; }
@@ -849,11 +851,64 @@ textarea.form-input { height: 130px; resize: vertical; }
   padding: 14px 18px;
   text-decoration: none;
   transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  overflow: visible;
 }
 .contact-link:hover { background: var(--parch-6); transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--wood-1); }
 .cl-icon { font-size: 32px; flex-shrink: 0; }
 .cl-label { font-family: var(--font-pixel); font-size: 7px; color: var(--wood-3); letter-spacing: 0.5px; margin-bottom: 4px; }
 .cl-value { font-size: 14px; color: var(--green-3); font-weight: 700; }
+
+/* ===================================================
+   SITE PREVIEW POPUP
+   =================================================== */
+.site-preview {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  width: 280px;
+  background: var(--parch-6);
+  border: 4px solid var(--wood-3);
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,0.5),
+    6px 6px 0 var(--wood-1),
+    8px 8px 0 var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  z-index: 600;
+  overflow: hidden;
+}
+
+.site-preview-label {
+  background: var(--wood-3);
+  padding: 7px 12px;
+  border-bottom: 2px solid var(--wood-1);
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--gold-5);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contact-link:hover .site-preview,
+.interest-slot:hover .site-preview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .site-preview { display: none; }
+}
 
 /* ===================================================
    CERTIFICATE MODAL
