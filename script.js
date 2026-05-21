@@ -256,6 +256,25 @@ function initContactForm() {
   });
 }
 
+// ===================== RESUME PDF MODAL =====================
+function initResumeModal() {
+  const modal   = document.getElementById('resume-modal');
+  const card    = document.getElementById('resume-card');
+  const fullBtn = document.getElementById('resume-fullscreen-btn');
+  if (!modal) return;
+
+  function openModal() { modal.classList.add('open'); }
+  function closeModal() { modal.classList.remove('open'); }
+
+  if (card)    card.addEventListener('click', openModal);
+  if (fullBtn) fullBtn.addEventListener('click', openModal);
+
+  const closeBtn = document.getElementById('resume-modal-close');
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}
+
 // ===================== INIT =====================
 document.addEventListener('DOMContentLoaded', () => {
   createStars();
@@ -265,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createParticles();
   animateCounters();
   initCertModal();
+  initResumeModal();
   initPageTransition();
   initMobileMenu();
   initCursorSparkle();

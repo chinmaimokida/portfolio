@@ -1013,6 +1013,124 @@ textarea.form-input { height: 130px; resize: vertical; }
 .modal-img { width: 100%; height: auto; display: block; }
 
 /* ===================================================
+   RESUME PAGE
+   =================================================== */
+.resume-download-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.resume-viewer-card {
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: transform 0.18s;
+}
+.resume-viewer-card:hover { transform: translateY(-5px) scale(1.01); }
+.resume-viewer-card .stardew-panel { padding: 0; overflow: hidden; }
+
+.resume-viewer-header {
+  background: var(--wood-3);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--gold-5);
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--wood-1);
+}
+
+.resume-click-hint {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--green-5);
+  animation: blink-hint 1.6s ease-in-out infinite;
+}
+@keyframes blink-hint {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.resume-pdf-wrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--parch-5);
+  overflow: hidden;
+}
+
+.resume-pdf-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  pointer-events: none;
+}
+
+.resume-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(28,15,8,0);
+  transition: background 0.25s;
+}
+.resume-viewer-card:hover .resume-zoom-overlay {
+  background: rgba(28,15,8,0.45);
+}
+.resume-zoom-icon {
+  font-size: 48px;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.resume-zoom-text {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  color: var(--gold-5);
+  text-shadow: 2px 2px 0 var(--wood-1);
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.resume-viewer-card:hover .resume-zoom-icon,
+.resume-viewer-card:hover .resume-zoom-text {
+  opacity: 1;
+  transform: none;
+}
+
+/* Resume fullscreen modal */
+.resume-modal .resume-modal-box {
+  max-width: 960px;
+  width: 96vw;
+  height: 92vh;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.resume-modal-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
+@media (max-width: 820px) {
+  .resume-pdf-wrap { height: 360px; }
+  .resume-download-row { flex-direction: column; align-items: center; }
+}
+
+/* ===================================================
    FOOTER
    =================================================== */
 .stardew-footer {
